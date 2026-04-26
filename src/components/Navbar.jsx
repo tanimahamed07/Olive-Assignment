@@ -14,8 +14,8 @@ const navLinks = [
 
 const Navbar = () => {
   return (
-    <nav className="w-full max-w-[1400px] mx-auto bg-[#f4faf6] border-b-0 border-[1px] border-[oklch(0.929_0.013_255.508)] rounded-t-[16px] overflow-hidden shadow-[0_4px_20px_-10px_rgba(0,0,0,0.1)]">
-      <div className="pt-[10px] pl-[16px] pr-[8px] pb-[50px]">
+    <nav className="w-full ">
+      <div className="pt-[10px] pl-[16px] pr-[8px]">
         <div className="flex justify-between items-center relative">
           {" "}
           {/* relative added here */}
@@ -41,7 +41,7 @@ const Navbar = () => {
                     href={link.href}
                     className="flex items-center gap-1 px-4 py-2 rounded-lg bg-transparent hover:bg-black/5 transition-all duration-200"
                   >
-                    <span className="text-[oklch(0.439_0_0)] text-[14px] font-medium antialiased">
+                    <span className="text-[#232020] text-[14px] font-medium antialiased">
                       {link.name}
                     </span>
                     {link.hasDropdown && (
