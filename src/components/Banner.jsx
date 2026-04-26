@@ -34,13 +34,14 @@ const Banner = () => {
     <section className="w-full max-w-[1400px] mx-auto bg-[#f4faf6] antialiased">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center relative">
-          {/* ... Hero text and badges (Unchanged) ... */}
+          {/* Trust Badge Section */}
           <div className="flex justify-center items-center pb-[8px] pt-10">
             <div className="flex -space-x-3 mr-1.5">
               {[1, 2, 3, 4].map((i) => (
                 <div key={i} className="relative w-9 h-9">
                   <Image
-                    fill
+                    width={36}
+                    height={36}
                     src={`https://i.pravatar.cc/150?u=${i}`}
                     alt="user"
                     className="rounded-full border-2 border-white object-cover shadow-sm"
@@ -72,14 +73,13 @@ const Banner = () => {
           </button>
 
           <div className="relative flex justify-center items-center h-[520px] overflow-hidden">
-            {/* Left Preview Section */}
-            <div className="absolute left-[calc(50%-160px-104px)] md:flex items-start gap-[12px] hidden pointer-events-none z-40 top-[85px] translate-y-[-10px]">
-              {/* 2nd Preview Card (Far Left) - Very low opacity */}
+            {/* Left Preview Section - top-80px ensures it stays 5px higher than before */}
+            <div className="absolute left-[calc(50%-160px-104px)] md:flex items-start gap-[12px] hidden pointer-events-none z-40 top-[80px] translate-y-[-10px]">
               <div className="w-[90px] h-[90px] flex items-center justify-center">
                 <motion.div
                   key={`far-left-${products[prevIndex2].id}`}
                   layoutId={`product-img-${products[prevIndex2].id}`}
-                  animate={{ opacity: 0.05 }} // Opacity akdom komiye deya hoyeche
+                  animate={{ opacity: 0.05 }}
                   transition={{ type: "spring", stiffness: 100, damping: 22 }}
                 >
                   <Image
@@ -92,12 +92,11 @@ const Banner = () => {
                 </motion.div>
               </div>
 
-              {/* 1st Preview Card (Near Left) - Medium opacity */}
               <div className="w-[90px] h-[90px] flex items-center justify-center">
                 <motion.div
                   key={`left-${products[prevIndex1].id}`}
                   layoutId={`product-img-${products[prevIndex1].id}`}
-                  animate={{ opacity: 0.3 }} // Opacity komanu holo
+                  animate={{ opacity: 0.3 }}
                   transition={{ type: "spring", stiffness: 100, damping: 22 }}
                 >
                   <Image
@@ -111,15 +110,15 @@ const Banner = () => {
               </div>
             </div>
 
-            {/* Phone Model / Main Card - Full opacity */}
+            {/* Phone Model */}
             <div className="relative z-20 w-[320px] h-[525px] bg-white rounded-t-[40px] shadow-2xl overflow-hidden border-10 border-b-0 border-[#b1b1b1]/40">
               <div className="absolute top-3 left-1/2 -translate-x-1/2 w-[90px] h-[22px] bg-black rounded-full z-[250]"></div>
               <div className="w-full h-full relative">
-                <div className="absolute top-2 left-0 w-full h-[210px] z-[50] flex items-center justify-center p-6">
+                <div className="absolute top-2 left-0 w-full h-[210px] z-50 flex items-center justify-center p-6">
                   <motion.div
                     key={`main-${products[currentProductIndex].id}`}
                     layoutId={`product-img-${products[currentProductIndex].id}`}
-                    animate={{ opacity: 1 }} // Main image full opacity
+                    animate={{ opacity: 1 }}
                     transition={{
                       type: "spring",
                       stiffness: 90,
@@ -166,8 +165,8 @@ const Banner = () => {
               </div>
             </div>
 
-            {/* Right Preview Section */}
-            <div className="absolute right-[calc(50%-160px-104px)] md:flex items-start gap-[12px] hidden pointer-events-none z-40 top-[85px] translate-y-[-10px]">
+            {/* Right Preview Section - top-80px ensures it stays 5px higher than before */}
+            <div className="absolute right-[calc(50%-160px-104px)] md:flex items-start gap-[12px] hidden pointer-events-none z-40 top-[80px] translate-y-[-10px]">
               <div className="w-[90px] h-[90px] flex items-center justify-center">
                 <motion.div
                   key={`right-${products[nextIndex1].id}`}

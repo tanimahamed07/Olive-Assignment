@@ -20,14 +20,14 @@ const Navbar = () => {
           {" "}
           {/* relative added here */}
           {/* Left: Logo */}
-          <div className="flex-shrink-0 z-10">
+          <div className="shrink-0 z-10">
             <Link href="/" className="flex pt-[10px] items-center">
               <Image
                 src="/navlogo.svg"
                 alt="Olive Logo"
                 width={110}
                 height={45}
-                className="h-[56px]"
+                className="h-[56px] w-auto"
                 priority
               />
             </Link>

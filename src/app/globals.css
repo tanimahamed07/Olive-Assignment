@@ -1,14 +1,5 @@
 @import "tailwindcss";
 
-/* Custom Font - Add your neueu.woff2 file to /public/fonts/ */
-@font-face {
-  font-family: "neueuFont";
-  src: url("/fonts/neueu.woff2") format("woff2");
-  font-weight: 400;
-  font-style: normal;
-  font-display: swap;
-}
-
 :root {
   --background: #ffffff;
   --foreground: #171717;
@@ -30,8 +21,6 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family:
-    neueuFont,
-    "neueuFont Fallback",
     system-ui,
     -apple-system,
     sans-serif;
