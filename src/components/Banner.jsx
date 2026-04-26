@@ -31,14 +31,17 @@ const Banner = () => {
   const nextIndex2 = (currentProductIndex + 2) % totalProducts;
 
   return (
-    <section className="w-full max-w-[1400px] mx-auto bg-[#f4faf6] antialiased">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="w-full max-w-[1400px] mx-auto bg-[#f4faf6] antialiased overflow-x-hidden">
+      <div className="max-w-7xl mx-auto px-4 md:px-4">
         <div className="text-center relative">
           {/* Trust Badge Section */}
-          <div className="flex justify-center items-center pb-[8px] pt-10">
-            <div className="flex -space-x-3 mr-1.5">
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-2 pb-[8px] pt-10">
+            <div className="flex -space-x-3">
               {[1, 2, 3, 4].map((i) => (
-                <div key={i} className="relative w-9 h-9">
+                <div
+                  key={i}
+                  className="relative w-8 h-8 sm:w-9 sm:h-9 transition-all duration-200 hover:z-50 hover:scale-110 cursor-pointer"
+                >
                   <Image
                     width={36}
                     height={36}
@@ -48,32 +51,37 @@ const Banner = () => {
                   />
                 </div>
               ))}
-              <div className="w-9 h-9 rounded-full bg-[#e2e2e2] border-2 border-white flex items-center justify-center text-[10px] font-bold text-gray-500 shadow-sm relative z-10">
+              <div className="w-8 h-8 sm:w-9 sm:h-9 rounded-full bg-[#e2e2e2] border-2 border-white flex items-center justify-center text-[10px] font-bold text-gray-500 shadow-sm relative z-10">
                 13k+
               </div>
             </div>
-            <span className="text-xs font-medium text-gray-600">
+            <span className="text-[11px] sm:text-xs font-medium text-gray-600">
               Trusted by thousands of healthy families
             </span>
           </div>
 
-          <h1 className="text-[48px] pt-[38px] md:text-[72px] font-semibold text-[#253612] mb-8 leading-[1.05] tracking-[-1.8px]">
-            The Safest Way to <br /> Shop for Groceries
+          {/* Title - Mobile Responsive font-size */}
+          <h1 className="text-[36px] sm:text-[48px] md:text-[72px] pt-[20px] sm:pt-[38px] font-semibold text-[#253612] mb-6 sm:mb-8 leading-[1.1] tracking-[-1px] sm:tracking-[-1.8px] px-2">
+            The Safest Way to <br/>
+            Shop for Groceries
           </h1>
-          <p className="text-[18px] text-[#1f1f1f]/60 max-w-[650px] mx-auto mt-[16px] mb-8 px-[16px] leading-[1.6] font-normal tracking-tight">
-            Use the Olive Food Scanner App to Instantly Eliminate{" "}
+
+          {/* Paragraph */}
+          <p className="text-[15px] sm:text-[18px] text-[#1f1f1f]/60 max-w-[650px] mx-auto mt-[10px] sm:mt-[16px] mb-8 px-[20px] leading-[1.5] sm:leading-[1.6] font-normal tracking-tight">
+            Use the Olive Food Scanner App to Instantly Eliminate
             <br className="hidden md:block" /> Harmful Ingredients from Your
-            Family&apos;s Diet and Get <br className="hidden md:block" />{" "}
+            Family&apos;s Diet and Get <br className="hidden md:block" />
             Expert-Backed Food Insights
           </p>
 
-          <button className="bg-[#243417]/90 hover:bg-[#243417] text-white px-[16px] py-[10px] rounded-full text-[14px] font-medium leading-none transition-all duration-300 inline-flex items-center gap-2 group mb-12">
+          <button className="bg-[#243417]/90 w-[330px] mx-auto sm:w-auto flex items-center justify-center hover:bg-[#243417] text-white px-[20px] py-[12px] sm:px-[16px] sm:py-[10px] rounded-full text-[14px] font-medium leading-none transition-all duration-300 gap-2 group mb-10 sm:mb-12">
             <Apple className="w-[18px] h-[18px] fill-current" />
             <span className="tracking-tight">Download for iOS</span>
           </button>
 
-          <div className="relative flex justify-center items-center h-[520px] overflow-hidden">
-            {/* Left Preview Section - top-80px ensures it stays 5px higher than before */}
+          {/* Animation Section */}
+          <div className="relative flex justify-center items-center h-[480px] sm:h-[520px] md:h-[550px]">
+            {/* Left Preview - Hidden on small mobile */}
             <div className="absolute left-[calc(50%-160px-104px)] md:flex items-start gap-[12px] hidden pointer-events-none z-40 top-[80px] translate-y-[-10px]">
               <div className="w-[90px] h-[90px] flex items-center justify-center">
                 <motion.div
@@ -91,7 +99,6 @@ const Banner = () => {
                   />
                 </motion.div>
               </div>
-
               <div className="w-[90px] h-[90px] flex items-center justify-center">
                 <motion.div
                   key={`left-${products[prevIndex1].id}`}
@@ -110,11 +117,13 @@ const Banner = () => {
               </div>
             </div>
 
-            {/* Phone Model */}
-            <div className="relative z-20 w-[320px] h-[525px] bg-white rounded-t-[40px] shadow-2xl overflow-hidden border-10 border-b-0 border-[#b1b1b1]/40">
-              <div className="absolute top-3 left-1/2 -translate-x-1/2 w-[90px] h-[22px] bg-black rounded-full z-[250]"></div>
+            {/* Phone Model - Responsive Width/Height */}
+            <div className="relative z-20 w-[280px] sm:w-[320px] h-[450px] sm:h-[525px] bg-white rounded-t-[35px] sm:rounded-t-[40px] shadow-2xl overflow-hidden border-8 sm:border-10 border-b-0 border-[#b1b1b1]/40">
+              {/* Dynamic Island */}
+              <div className="absolute top-3 left-1/2 -translate-x-1/2 w-[70px] sm:w-[90px] h-[18px] sm:h-[22px] bg-black rounded-full z-[250]"></div>
+
               <div className="w-full h-full relative">
-                <div className="absolute top-2 left-0 w-full h-[210px] z-50 flex items-center justify-center p-6">
+                <div className="absolute top-2 left-0 w-full h-[180px] sm:h-[210px] z-50 flex items-center justify-center p-4 sm:p-6">
                   <motion.div
                     key={`main-${products[currentProductIndex].id}`}
                     layoutId={`product-img-${products[currentProductIndex].id}`}
@@ -131,7 +140,7 @@ const Banner = () => {
                       width={130}
                       height={130}
                       alt="Main"
-                      className="object-contain rounded-3xl w-[120px] h-[120px]"
+                      className="object-contain rounded-3xl w-[100px] h-[100px] sm:w-[120px] sm:h-[120px]"
                     />
                   </motion.div>
                 </div>
@@ -151,21 +160,21 @@ const Banner = () => {
                       stiffness: 120,
                       delay: 0.3,
                     }}
-                    className="absolute top-[145px] left-0 w-full h-full z-[50] bg-white rounded-t-[50px] shadow-[0_-15px_35px_rgba(0,0,0,0.1)]"
+                    className="absolute top-[120px] sm:top-[145px] left-0 w-full h-full z-[50] bg-white rounded-t-[40px] sm:rounded-t-[50px] shadow-[0_-15px_35px_rgba(0,0,0,0.1)]"
                   >
                     <Image
                       src={products[currentProductIndex].details}
                       width={320}
                       height={500}
                       alt="Details"
-                      className="w-full h-auto rounded-4xl object-top"
+                      className="w-full h-auto object-top"
                     />
                   </motion.div>
                 </AnimatePresence>
               </div>
             </div>
 
-            {/* Right Preview Section - top-80px ensures it stays 5px higher than before */}
+            {/* Right Preview - Hidden on small mobile */}
             <div className="absolute right-[calc(50%-160px-104px)] md:flex items-start gap-[12px] hidden pointer-events-none z-40 top-[80px] translate-y-[-10px]">
               <div className="w-[90px] h-[90px] flex items-center justify-center">
                 <motion.div
