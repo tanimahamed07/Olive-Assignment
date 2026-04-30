@@ -62,7 +62,7 @@ const Banner = () => {
 
           {/* Title - Mobile Responsive font-size */}
           <h1 className="text-[36px] sm:text-[48px] md:text-[72px] pt-[20px] sm:pt-[38px] font-semibold text-[#253612] mb-6 sm:mb-8 leading-[1.1] tracking-[-1px] sm:tracking-[-1.8px] px-2">
-            The Safest Way to <br/>
+            The Safest Way to <br />
             Shop for Groceries
           </h1>
 
@@ -73,11 +73,20 @@ const Banner = () => {
             Family&apos;s Diet and Get <br className="hidden md:block" />
             Expert-Backed Food Insights
           </p>
+          {/* Button Section */}
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 sm:gap-8 mb-10 sm:mb-12">
+            {/* Download Button */}
+            <button className="bg-[#243417] w-full sm:w-auto flex items-center justify-center hover:bg-[#2b3d1c] text-white px-6 py-3 rounded-full text-[15px] font-medium transition-all duration-300 gap-2 group">
+              <Apple className="w-5 h-5 fill-current" />
+              <span className="tracking-tight">Download for iOS</span>
+            </button>
 
-          <button className="bg-[#243417]/90 w-[330px] mx-auto sm:w-auto flex items-center justify-center hover:bg-[#243417] text-white px-[20px] py-[12px] sm:px-[16px] sm:py-[10px] rounded-full text-[14px] font-medium leading-none transition-all duration-300 gap-2 group mb-10 sm:mb-12">
-            <Apple className="w-[18px] h-[18px] fill-current" />
-            <span className="tracking-tight">Download for iOS</span>
-          </button>
+            {/* Join Community Button - Hidden on Mobile, Shown on Desktop */}
+            <button className="hidden sm:flex items-center text-[#243417] text-[15px] font-semibold hover:opacity-80 transition-all gap-1">
+              Join the Olive Community
+              <span className="text-lg">→</span>
+            </button>
+          </div>
 
           {/* Animation Section */}
           <div className="relative flex justify-center items-center h-[480px] sm:h-[520px] md:h-[550px]">
@@ -118,7 +127,7 @@ const Banner = () => {
             </div>
 
             {/* Phone Model - Responsive Width/Height */}
-            <div className="relative z-20 w-[280px] sm:w-[320px] h-[450px] sm:h-[525px] bg-white rounded-t-[35px] sm:rounded-t-[40px] shadow-2xl overflow-hidden border-8 sm:border-10 border-b-0 border-[#b1b1b1]/40">
+            <div className="relative z-20 w-[280px] sm:w-[320px] h-[450px] sm:h-[525px] bg-white rounded-t-[35px] sm:rounded-t-[40px] shadow-2xl overflow-hidden border-x-8 border-t-8 sm:border-x-10 sm:border-t-10 border-[#b1b1b1]/40">
               {/* Dynamic Island */}
               <div className="absolute top-3 left-1/2 -translate-x-1/2 w-[70px] sm:w-[90px] h-[18px] sm:h-[22px] bg-black rounded-full z-[250]"></div>
 
